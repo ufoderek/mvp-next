@@ -1,0 +1,1 @@
+cmd_/home/ufoderek/dev/working/mvp/black_hole/bh.ko := arm-none-linux-gnueabi-ld -EL -r  -T /home/ufoderek/dev/working/kernel/linux-2.6.38/linux-2.6.38-arm1-patched-pb/scripts/module-common.lds --build-id  -o /home/ufoderek/dev/working/mvp/black_hole/bh.ko /home/ufoderek/dev/working/mvp/black_hole/bh.o /home/ufoderek/dev/working/mvp/black_hole/bh.mod.o

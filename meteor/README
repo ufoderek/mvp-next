@@ -1,0 +1,5 @@
+newlib
+    * export CFLAGS_FOR_TARGET="-O2 -march=armv7-a -mcpu=cortex-a15 -fomit-frame-pointer"
+    * ../newlib-1.19.0/configure --target=arm-none-eabi --prefix=/home/ufoderek/toolchain/newlib-1.19.0 --disable-newlib-supplied-syscalls --disable-interwork --disable-multilib
+    * there's an bug in newlib-1.20 prevent you from compiling, so use newlib-0.19.0 instead
+

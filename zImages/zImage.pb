@@ -1,0 +1,1 @@
+/home/ufoderek/dev/working/kernel/linux-2.6.38/linux-2.6.38-arm1-patched-pb/arch/arm/boot/zImage

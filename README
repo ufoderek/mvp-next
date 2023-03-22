@@ -1,0 +1,32 @@
+1. Compile
+	* Realview Platform Baseboard (Cortex-A8)
+		command:	make pb
+		binary:		bin/mvp_realviewpb_armv7a
+
+	* Realview Platform Baseboard (Cortex-A8) with debugging function
+		command: 	make pbd
+		binary: 	bin/mvp_realviewpb_armv7a_debug
+
+	* NOTE:
+		a. The Makefile will recompile modified source files ONLY.
+		b. If a header file is modified, source files using that header file will be recompiled.
+
+2. Execute
+	mvp_realviewpb_armv7a:			./run pb
+	mvp_realviewpb_armv7a_debug:	./run pbd
+
+3. Backup
+	* Normal backup: 	make backup
+		a. Copy entire mvp directory to ../mvp-bk/mvp-{YEAR}-{DATE}-{TIME}
+		b. mvp is NOT GUARRENTED to work
+
+	* Stable backup: 	make sbackup
+		a. Copy entire mvp directory to ../mvp-bk/mvp-{YEAR}-{DATE}-{TIME}-stable
+		b. Compress entire mvp directory to ../mvp-bk/mvp-{YEAR}-{DATE}-{TIME}-stable.tar.bz2
+		c. mvp is GUARRENTED to work
+	
+4. Kill mvp process
+	./run k
+
+5. Clean all object files, dependency files and target binary
+	command:	make clean

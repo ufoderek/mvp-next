@@ -1,0 +1,62 @@
+if [ $1 = "pb" ]
+then
+	./bin/mvp_realviewpb_armv7a --kernel ./zImages/zImage.pb --initrd ./initrds/initrd.gz
+fi
+
+if [ $1 = "pbd" ]
+then
+	./bin/mvp_realviewpb_armv7a_debug --kernel ./zImages/zImage.pb --initrd ./initrds/initrd.gz
+fi
+
+if [ $1 = "pbg" ]
+then
+	./bin/mvp_realviewpb_armv7a --kernel ./zImages/zImage.pb --initrd ./initrds/initrd.gz --gdb --port $2
+fi
+
+if [ $1 = "pbdg" ]
+then
+	./bin/mvp_realviewpb_armv7a_debug --kernel ./zImages/zImage.pb --initrd ./initrds/initrd.gz --gdb --port $2
+fi
+
+if [ $1 = "vb" ]
+then
+	./bin/mvp_meteorvb_armv7a --vmm ./meteor/bin/meteor
+fi
+
+if [ $1 = "vbd" ]
+then
+	./bin/mvp_meteorvb_armv7a_debug --vmm ./meteor/bin/meteor_debug
+fi
+
+if [ $1 = "cmp" ]
+then
+	./start_tty && ./bin/mvp_casmp --prog ./bthread/test.bin
+fi
+
+if [ $1 = "cmpg" ]
+then
+	./start_tty && ./bin/mvp_casmp --prog ./bthread/test.bin --gdb --port $2
+fi
+
+if [ $1 = "cmpd" ]
+then
+	./start_tty && ./bin/mvp_casmp_debug --prog ./bthread/test.bin
+fi
+
+if [ $1 = "cmpdg" ]
+then
+	./start_tty && ./bin/mvp_casmp_debug --prog ./bthread/test.bin --gdb --port $2
+fi
+
+if [ $1 = "k" ]
+then
+	pkill mvp_realviewpb
+	pkill mvp_meteorvb
+fi
+
+if [ $1 = "kk" ]
+then
+	pkill -9 mvp_realviewpb
+	pkill -9 mvp_meteorvb
+fi
+

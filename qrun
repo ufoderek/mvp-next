@@ -1,0 +1,27 @@
+if [ "$1" == "pb" ]; then
+	qemu-system-arm -M realview-pb-a8 -kernel zImages/zImage.pb -initrd initrds/initrd.gz -cpu cortex-a8
+fi
+
+if [ "$1" == "pbg" ]; then
+	qemu-system-arm -M realview-pb-a8 -kernel zImages/zImage.pb -initrd initrds/initrd.gz -cpu cortex-a8 -s -S
+fi
+
+if [ "$1" == "pbg2" ]; then
+	qemu-system-arm -M realview-pb-a8 -kernel zImages/zImage.pb -initrd initrds/initrd.gz -cpu cortex-a8 -gdb tcp::4321 -S
+fi
+
+if [ "$1" == "pbx" ]; then
+	qemu-system-arm -M realview-pbx-a9 -kernel zImages/zImage.pbxmp -initrd initrds/initrd.gz -cpu cortex-a9
+fi
+
+if [ "$1" == "pbxmp" ]; then
+	qemu-system-arm -M realview-pbx-a9 -kernel zImages/zImage.pbxmp -initrd initrds/initrd.gz -cpu cortex-a9 -smp 4
+fi
+
+if [ "$1" == "vx" ]; then
+	qemu-system-arm -M vexpress-a9 -kernel zImages/zImage.vxmp -initrd initrds/initrd.gz -cpu cortex-a9
+fi
+
+if [ "$1" == "vxmp" ]; then
+	qemu-system-arm -M vexpress-a9 -kernel zImages/zImage.vxmp -initrd initrds/initrd.gz -cpu cortex-a9 -smp 4
+fi
